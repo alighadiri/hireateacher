@@ -21,8 +21,27 @@ export default {
       },
     ],
   },
-  mutations: {},
-  actions: {},
+
+  mutations: {
+    registerTeacher(state, payload) {
+      state.teachers.push(payload)
+    }
+  },
+
+  actions: {
+    addTeacher(context, data) {
+      const teacher = {
+        id : 't3',
+        firstName : data.first,
+        lastName : data.last,
+        description : data.desc,
+        hourlyRate : data.rate,
+        areas : data.areas
+      }
+      context.commit('registerTeacher', teacher)
+    },
+  },
+
   getters: {
     teachers(state) {
       return state.teachers;

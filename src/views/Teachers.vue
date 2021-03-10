@@ -2,11 +2,11 @@
 	div
 		div.my-5.mx-auto.card-container
 			v-card
-				TeacherFilter(@change-filter="setFilters")
 				div.d-flex.justify-space-between
 					v-btn.ma-2(outlined) Refresh
 					router-link(to="/register")
 						v-btn.ma-2(color="success") Register as a teacher
+				TeacherFilter(@change-filter="setFilters")
 			ul.p-0(v-if="hasTeachers")
 				TeacherCard.my-5(v-for="teacher in filteredTeachers" :key="teacher.id" :id="teacher.id" :firstName="teacher.firstName" :lastName="teacher.lastName" :rate="teacher.hourlyRate" :areas="teacher.areas")
 			h3(v-else) No Teacher Found!
