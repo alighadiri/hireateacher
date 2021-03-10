@@ -17,6 +17,7 @@ const router = new VueRouter({
     {
       path: "/teachers/:id",
       component: TeacherDetails,
+      props: true,
       children: [
         { path: "contact", component: TeacherContact }, //teachers/:id/contact
       ],

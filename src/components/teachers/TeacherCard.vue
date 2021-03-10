@@ -2,15 +2,16 @@
 	li
 		v-card
 			v-card-text
-				h3.my-4 {{ teacherFullName }}
+				h2.my-4 {{ teacherFullName }}
 				h4.mb-4 ${{ rate }}/hour
 				div.d-flex.my-2
-					v-chip.mx-1(label color="secondary" v-for="area in areas" :key="area") {{ area }}
+					v-chip.mx-1(label color="secondary" v-for="area in areas" :key="area") {{ area.toUpperCase() }}
 				div.d-flex.justify-space-between.mt-6
-					v-btn(elevation="4" color="success")
-						router-link(:to="teacherContactLink") Contact
-					v-btn(elevation="4" color="info")
-						router-link(:to="teacherDetailLink") Details			
+					router-link(:to="teacherContactLink")
+						v-btn(elevation="4" color="accent") Contact
+					router-link(:to="teacherDetailLink")
+						v-btn(elevation="4" color="info") Details
+									
 
 </template>
 
