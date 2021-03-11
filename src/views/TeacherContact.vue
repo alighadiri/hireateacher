@@ -39,7 +39,14 @@ export default {
 
 		submit() {
 			if (this.validate()) {
-				console.log(this.formData);
+				const newRequest = {
+					teacherId: this.$route.params.id,
+					name: this.formData.name,
+					email: this.formData.email,
+					message: this.formData.message
+				};
+
+				this.$store.dispatch('requests/createRequest', newRequest)
 			}
 		},
 	},
