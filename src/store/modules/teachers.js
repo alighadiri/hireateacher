@@ -4,10 +4,10 @@ export default {
     teachers: [
       {
         id: "t1",
-        firstName: "Maximilian",
-        lastName: "Schwarzmüller",
+        firstName: "John",
+        lastName: "Doe",
         areas: ["frontend", "backend", "fullstack"],
-        description: "I'm Maximilian and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
+        description: "I'm John and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
         hourlyRate: 30,
       },
       {
