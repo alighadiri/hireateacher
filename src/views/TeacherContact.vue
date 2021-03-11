@@ -46,7 +46,8 @@ export default {
 					message: this.formData.message
 				};
 
-				this.$store.dispatch('requests/createRequest', newRequest)
+				this.$store.dispatch('requests/createRequest', newRequest);
+				this.$router.replace('/teachers');
 			}
 		},
 	},

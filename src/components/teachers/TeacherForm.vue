@@ -13,7 +13,6 @@ export default {
 	emits: ["save-data"],
 	data() {
 		return {
-			
 			areas: [
 				{
 					text: "Frontend Development",
@@ -21,15 +20,15 @@ export default {
 				},
 				{
 					text: "Backend Development",
-					value: 'backend'
+					value: "backend",
 				},
 				{
 					text: "Fullstack Development",
-					value: 'fullstack'
+					value: "fullstack",
 				},
 				{
 					text: "DevOps",
-					value: "devops"
+					value: "devops",
 				},
 			],
 
@@ -42,24 +41,31 @@ export default {
 			},
 
 			rules: {
-          required: value => !!value || 'Required.',
-          counter: value => value.length <= 20 || 'Max 20 characters',
-					counterDesc: value => value.length >= 20 || 'Min 20 characters',
-					rate: value => value > 0 || 'Must be greater than 0',
-					areas: value => value.length > 0 || 'At least 1 should be selected'
-          },
+				required: (value) =>
+					!!value || "Required.",
+				counter: (value) =>
+					value.length <= 20 ||
+					"Max 20 characters",
+				counterDesc: (value) =>
+					value.length >= 20 ||
+					"Min 20 characters",
+				rate: (value) =>
+					value > 0 || "Must be greater than 0",
+				areas: (value) =>
+					value.length > 0 ||
+					"At least 1 should be selected",
+			},
 		};
 	},
 
 	methods: {
 		validate() {
-        return this.$refs.teacherForm.validate()
-      },
+			return this.$refs.teacherForm.validate();
+		},
 		register() {
 			if (this.validate()) {
 				this.$emit("save-data", this.formData);
 			}
-			
 		},
 	},
 };
