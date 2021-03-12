@@ -12,7 +12,7 @@ export default new Vuex.Store({
   },
   
   state: {
-
+    teacherId: 't3'
 
   },
 
@@ -23,6 +23,8 @@ export default new Vuex.Store({
   },
 
   getters: {
-    
+    teacherId(state) {
+      return state.teacherId;
+    } 
   },
 })
